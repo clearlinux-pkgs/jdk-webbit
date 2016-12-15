@@ -4,12 +4,12 @@
 #
 Name     : jdk-webbit
 Version  : 0.4.14
-Release  : 1
+Release  : 2
 URL      : https://github.com/webbit/webbit/archive/v0.4.14.tar.gz
 Source0  : https://github.com/webbit/webbit/archive/v0.4.14.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : BSD-2-Clause BSD-3-Clause
+License  : BSD-3-Clause
 Requires: jdk-webbit-data
 BuildRequires : apache-maven
 BuildRequires : apache-maven2
@@ -103,13 +103,13 @@ data components for the jdk-webbit package.
 python3 /usr/share/java-utils/mvn_build.py -- -Dmaven.test.failure.ignore=true
 
 %install
-xmvn-install  -R .xmvn-reactor -n maven-parent -d %{buildroot}
+xmvn-install  -R .xmvn-reactor -n webbit -d %{buildroot}
 
 %files
 %defattr(-,root,root,-)
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/java/maven-parent/webbit.jar
-/usr/share/maven-metadata/maven-parent.xml
-/usr/share/maven-poms/maven-parent/webbit.pom
+/usr/share/java/webbit/webbit.jar
+/usr/share/maven-metadata/webbit.xml
+/usr/share/maven-poms/webbit/webbit.pom
